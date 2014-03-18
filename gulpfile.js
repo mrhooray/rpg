@@ -5,12 +5,12 @@ var jshint = require('gulp-jshint');
 var mocha = require('gulp-mocha');
 
 var paths = {
-  scripts: ['!./node_modules/**/*.*', './**/*.js'],
+  scripts: ['**/*.js', '!node_modules/**'],
   tests: 'test/**/*.js'
 };
 
 gulp.task('lint', function () {
-  gulp
+  return gulp
   .src(paths.scripts)
   .pipe(jshint())
   .pipe(jshint.reporter('default'))
@@ -18,7 +18,7 @@ gulp.task('lint', function () {
 });
 
 gulp.task('test', ['lint'], function () {
-  gulp
+  return gulp
   .src(paths.tests)
   .pipe(mocha({reporter: 'spec'}));
 });
