@@ -1,0 +1,30 @@
+{
+  "name": "rpg",
+  "version": "0.0.0",
+  "description": "random password generator",
+  "keywords": [
+    "password",
+    "generator",
+    "random"
+  ],
+  "author": "Rui Hu <code@mrhooray.com>",
+  "main": "./lib/rpg.js",
+  "scripts": {
+    "test": "make test"
+  },
+  "devDependencies": {
+    "gulp": "^3.5.6",
+    "gulp-jshint": "^1.5.0",
+    "gulp-mocha": "^0.4.1",
+    "should": "^3.1.3"
+  },
+  "homepage": "https://github.com/mrhooray/rpg",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mrhooray/rpg.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mrhooray/rpg/issues"
+  },
+  "license": "MIT"
+}
