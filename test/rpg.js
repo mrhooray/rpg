@@ -1,19 +1,30 @@
 'use strict';
 /*jshint -W068 */
+/*jshint expr:true */
 
 require('should');
 var rpg = require('../lib/rpg');
 
 describe('rpg.js', function () {
   it('should return a password', function () {
-    var pwd = rpg();
-    pwd.should.be.type('string');
-    pwd.length.should.greaterThan(0);
+    rpg().should.be.type('string').and.not.be.empty;
   });
-  it('should work with empty options object', function () {
-    var pwd = rpg({});
-    pwd.should.be.type('string');
-    pwd.length.should.greaterThan(0);
+  it('should be able to accept plain object as options', function () {
+    var options = [{}, {mode: 'lu', length: 8}];
+    options.forEach(function (option) {
+      (function () {
+        rpg(option).should.be.type('string').and.not.be.empty;
+      }).should.not.throw();
+    });
+  });
+  it('should throw error when options is not a plain object', function () {
+    var fn = function () {};
+    var options = [0, 1, true, false, '123', [], null, fn];
+    options.forEach(function (option) {
+      (function () {
+        rpg(option);
+      }).should.throw(/options/);
+    });
   });
   it('should be able to configure password length', function () {
     var lengths = [1, 16, 1024];
