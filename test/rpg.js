@@ -2,8 +2,10 @@
 /*jshint -W068 */
 /*jshint expr:true */
 
-require('should');
-var rpg = require('../lib/rpg');
+if (typeof module !== 'undefined') {
+  require('should');
+  var rpg = require('../lib/rpg');
+}
 
 describe('rpg.js', function () {
   describe('default', function () {
@@ -11,7 +13,6 @@ describe('rpg.js', function () {
       rpg().should.be.type('string').and.not.be.empty;
     });
   });
-
 
   describe('options', function () {
     it('should accept plain object as options', function () {
