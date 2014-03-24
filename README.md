@@ -1,5 +1,5 @@
 # rpg [![Build Status](https://travis-ci.org/mrhooray/rpg.png?branch=master)](https://travis-ci.org/mrhooray/rpg)
-(pseudo)random password generator
+> (pseudo)random password generator
 
 ## Installation
 ### browser
