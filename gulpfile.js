@@ -9,7 +9,7 @@ var paths = {
   tests: 'test/**/*.js'
 };
 
-gulp.task('lint', function () {
+gulp.task('jshint', function () {
   return gulp
   .src(paths.scripts)
   .pipe(jshint())
@@ -17,7 +17,7 @@ gulp.task('lint', function () {
   .pipe(jshint.reporter('fail'));
 });
 
-gulp.task('test', ['lint'], function () {
+gulp.task('test', ['jshint'], function () {
   return gulp
   .src(paths.tests)
   .pipe(mocha({reporter: 'spec'}));
