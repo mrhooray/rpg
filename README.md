@@ -19,24 +19,24 @@ rpg({length: 16, set: 'lud'})                       // > '1G7elTEr6kU5dWBP'
 rpg({length: 16, set: 'lud', exclude: '123456789'}) // > 'dgomcPCg0RJsYWrx'
 ```
 
-##API
-###rpg([options])
+## API
+### rpg([options])
 
-####options.length
-Type: `Number`  
+#### options.length
+Type: `Number`
 Default: `12`
 
 length of the generated password
 
-####options.set
-Type: `String`  
+#### options.set
+Type: `String`
 Default: `ludp`
 
-character set of password generation  
+character set of password generation
 combination of l(lower case), u(upper case), d(digit), p(punctuation)
 
-####options.exclude
-Type: `String`  
+#### options.exclude
+Type: `String`
 Default: ``
 
 characters to be excluded from generation
